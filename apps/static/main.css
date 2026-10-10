@@ -1,0 +1,122 @@
+
+
+
+.link-example a {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.link-example a:link {
+    color: #0066cc;
+    background-color: #e6f0fa;
+}
+
+.link-example a:visited {
+    color: #800080;
+    background-color: #f0e6f0;
+}
+
+.link-example a:hover {
+    color: #ffffff;
+    background-color: #ff6600;
+}
+
+.link-example a:active {
+    color: #ff0000;
+    background-color: #ffff00;
+}
+
+
+.formatting-example h1 {
+    color: #2c3e50;
+    text-align: center;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.formatting-example p {
+    font-size: 18px;
+    padding: 8px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.formatting-example b { color: #e74c3c; }
+.formatting-example strong { color: #2ecc71; }
+.formatting-example i { color: #3498db; }
+.formatting-example em { color: #9b59b6; }
+.formatting-example small { color: #95a5a6; }
+.formatting-example mark { 
+    background-color: #f1c40f;
+    padding: 2px 5px;
+}
+.formatting-example del { color: #e74c3c; }
+.formatting-example ins { 
+    color: #27ae60;
+    text-decoration: none;
+    border-bottom: 2px solid #27ae60;
+}
+.formatting-example sub { color: #e67e22; }
+.formatting-example sup { color: #e67e22; }
+
+
+.listing-example {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.listing-example h1 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.listing-example ul {
+    list-style-type: disc;
+}
+
+.listing-example ul ul {
+    list-style-type: circle;
+}
+
+.listing-example ul ul ul {
+    list-style-type: square;
+}
+
+.listing-example ul ul ul ol {
+    list-style-type: decimal;
+}
+
+
+.table-example table, 
+.table-example th, 
+.table-example td {
+    border: 2px solid black !important;
+    border-collapse: collapse !important;
+}
+
+.table-example th, 
+.table-example td {
+    padding: 10px !important;
+    text-align: center !important;
+}
+
+.table-example th {
+    background-color: #3498db !important;
+    color: white !important;
+}
+
+.table-example .total-row td {
+    background-color: #ffd700 !important;
+    font-weight: bold !important;
+}

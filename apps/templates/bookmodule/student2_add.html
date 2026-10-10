@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Add Student (Django Forms){% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Add New Student (Django Forms)</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+        <a href="{% url 'student2_list' %}">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

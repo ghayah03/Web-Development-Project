@@ -1,0 +1,28 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lab13 - Task2{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Task 2: Add Item to List</h1>
+    
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    
+    <button onclick="addItem()">Add Item</button>
+</div>
+
+<script>
+    function addItem() {
+        var ul = document.getElementById('myList');
+        var li = document.createElement('li');
+        var count = ul.children.length + 1;
+        li.appendChild(document.createTextNode('Item ' + count));
+        ul.appendChild(li);
+    }
+</script>
+{% endblock content %}

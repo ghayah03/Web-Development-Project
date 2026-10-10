@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Delete Student{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Delete Student</h1>
+    <p>Are you sure you want to delete "<strong>{{ student.name }}</strong>"?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'student2_list' %}">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

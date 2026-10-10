@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lab8 - Statistics{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Book Statistics</h1>
+    
+    <ul>
+        <li><strong>Total Books:</strong> {{ stats.total_books }}</li>
+        <li><strong>Total Price:</strong> ${{ stats.total_price|floatformat:2 }}</li>
+        <li><strong>Average Price:</strong> ${{ stats.avg_price|floatformat:2 }}</li>
+        <li><strong>Maximum Price:</strong> ${{ stats.max_price|floatformat:2 }}</li>
+        <li><strong>Minimum Price:</strong> ${{ stats.min_price|floatformat:2 }}</li>
+    </ul>
+</div>
+{% endblock content %}

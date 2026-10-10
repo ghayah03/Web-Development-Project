@@ -1,0 +1,28 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lab13 - Task4{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Task 4: Hover Effect</h1>
+    
+    <div id="hoverDiv" style="width:300px;height:150px;background-color:lightgray;border:1px solid black;padding:20px;margin:20px 0;font-size:16px;">
+        Hover over me!
+    </div>
+</div>
+
+<script>
+    var div = document.getElementById('hoverDiv');
+    
+    div.addEventListener('mouseover', function() {
+        this.style.backgroundColor = 'yellow';
+        this.style.fontSize = '24px';
+    });
+    
+    div.addEventListener('mouseout', function() {
+        this.style.backgroundColor = 'lightgray';
+        this.style.fontSize = '16px';
+    });
+</script>
+{% endblock content %}

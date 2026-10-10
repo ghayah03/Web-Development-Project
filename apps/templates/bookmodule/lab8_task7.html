@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lab8 - Students per City{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Number of Students in Each City</h1>
+    
+    <ul>
+    {% for item in stats %}
+        <li><strong>{{ item.address__city }}:</strong> {{ item.student_count }} student(s)</li>
+    {% empty %}
+        <li>No students found.</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

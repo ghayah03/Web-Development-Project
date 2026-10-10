@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Bookstore{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'exam/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Online Bookstore</h1>
+        <nav>
+            <a href="{% url 'exam_index' %}">Home</a> |
+            <a href="{% url 'exam_list' %}">Books</a> |
+            <a href="{% url 'exam_add' %}">Add Book</a> |
+            <a href="{% url 'exam_search' %}">Search</a>
+        </nav>
+        <hr>
+        {% block content %}
+        {% endblock %}
+        <hr>
+        <footer>© 2026 Bookstore</footer>
+    </div>
+</body>
+</html>

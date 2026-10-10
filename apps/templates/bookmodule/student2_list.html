@@ -1,0 +1,41 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Students List (Django Forms){% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Students List (Django Forms)</h1>
+    <a href="{% url 'student2_add' %}">Add New Student</a>
+    <hr>
+    <table border="1" cellpadding="10" style="width:100%; border-collapse:collapse;">
+        <thead>
+            <tr style="background-color:#3498db; color:white;">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.address.city }}</td>
+                <td>
+                    <a href="{% url 'student2_edit' student.id %}">Edit</a>
+                    <a href="{% url 'student2_delete' student.id %}" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" style="text-align:center;">No students found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

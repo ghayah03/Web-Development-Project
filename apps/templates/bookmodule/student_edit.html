@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Edit Student{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Edit Student</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label>Name:</label>
+            <input type="text" name="name" value="{{ student.name }}" required>
+        </div>
+        <div>
+            <label>Age:</label>
+            <input type="number" name="age" value="{{ student.age }}" required>
+        </div>
+        <div>
+            <label>Address:</label>
+            <select name="address" required>
+                {% for address in addresses %}
+                <option value="{{ address.id }}" {% if student.address.id == address.id %}selected{% endif %}>
+                    {{ address.city }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <button type="submit">Update</button>
+            <a href="{% url 'student_list' %}">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}

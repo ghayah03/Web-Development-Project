@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lab9 - Task1{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Number of Students in Each Department</h1>
+    <ul>
+    {% for dept in stats %}
+        <li><strong>{{ dept.name }}:</strong> {{ dept.student_count }} student(s)</li>
+    {% empty %}
+        <li>No departments found.</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

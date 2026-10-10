@@ -1,0 +1,27 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lab13 - Task3{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Task 3: Toggle Hide/Show</h1>
+    
+    <div id="toggleDiv" style="width:300px;height:150px;background-color:orange;border:1px solid black;padding:20px;margin:20px 0;">
+        This div can be hidden or shown.
+    </div>
+    
+    <button onclick="toggleDiv()">Toggle Hide/Show</button>
+</div>
+
+<script>
+    function toggleDiv() {
+        var div = document.getElementById('toggleDiv');
+        if (div.style.display === 'none') {
+            div.style.display = 'block';
+        } else {
+            div.style.display = 'none';
+        }
+    }
+</script>
+{% endblock content %}

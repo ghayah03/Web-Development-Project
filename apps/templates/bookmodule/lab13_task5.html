@@ -1,0 +1,53 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lab13 - Task5{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Task 5: Create Table with JS</h1>
+    
+    <div id="tableContainer"></div>
+</div>
+
+<script>
+    function createTable() {
+        var container = document.getElementById('tableContainer');
+        var table = document.createElement('table');
+        table.setAttribute('border', '1');
+        table.style.borderCollapse = 'collapse';
+        table.style.width = '100%';
+        
+        
+        var data = [
+            ['Name', 'Age', 'City'],
+            ['Ahmed', '22', 'Doha'],
+            ['Sara', '20', 'Al-Rayyan'],
+            ['Mohammed', '23', 'Al-Wakrah']
+        ];
+        
+        for (var i = 0; i < data.length; i++) {
+            var row = document.createElement('tr');
+            
+            
+            if (i === 0) {
+                row.style.backgroundColor = '#3498db';
+                row.style.color = 'white';
+            }
+            
+            for (var j = 0; j < data[i].length; j++) {
+                var cell = document.createElement('td');
+                cell.textContent = data[i][j];
+                cell.style.padding = '10px';
+                cell.style.border = '1px solid black';
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+        }
+        container.appendChild(table);
+    }
+    
+    
+    window.onload = createTable;
+</script>
+{% endblock content %}

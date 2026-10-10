@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Delete Profile{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Delete Profile</h1>
+    <p>Are you sure you want to delete "<strong>{{ profile.name }}</strong>"?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'profile_list' %}">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

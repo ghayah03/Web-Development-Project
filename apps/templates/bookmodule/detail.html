@@ -1,0 +1,16 @@
+<h1>Book Details</h1>
+
+{% if book %}
+
+<h2>{{ book.title }}</h2>
+
+<p>
+Author: {{ book.author }} <br>
+Year: {{ book.year }}
+</p>
+
+{% else %}
+
+<p>Book not found</p>
+
+{% endif %}

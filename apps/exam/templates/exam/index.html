@@ -1,0 +1,15 @@
+{% extends "exam/base.html" %}
+{% load static %}
+
+{% block title %}Home - Bookstore{% endblock %}
+
+{% block content %}
+    <img src="{% static 'exam/images/bookstore1.jpg' %}" alt="Bookstore" width="300">
+    <h2>Welcome to the Online Bookstore</h2>
+    <p>Browse our collection of books, add new ones, or search for your favorite titles!</p>
+    <ul>
+        <li><a href="{% url 'exam_list' %}">View All Books</a></li>
+        <li><a href="{% url 'exam_add' %}">Add a New Book</a></li>
+        <li><a href="{% url 'exam_search' %}">Search for a Book</a></li>
+    </ul>
+{% endblock %}

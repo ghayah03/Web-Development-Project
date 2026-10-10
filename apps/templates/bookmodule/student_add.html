@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Add Student{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Add New Student</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label>Name:</label>
+            <input type="text" name="name" required>
+        </div>
+        <div>
+            <label>Age:</label>
+            <input type="number" name="age" required>
+        </div>
+        <div>
+            <label>Address:</label>
+            <select name="address" required>
+                <option value="">Select Address</option>
+                {% for address in addresses %}
+                <option value="{{ address.id }}">{{ address.city }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <button type="submit">Save</button>
+            <a href="{% url 'student_list' %}">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}

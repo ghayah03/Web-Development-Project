@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lab9 - Task3{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Oldest Student in Each Department</h1>
+    <ul>
+    {% for dept in stats %}
+        <li><strong>{{ dept.name }}:</strong> Oldest age = {{ dept.oldest }}</li>
+    {% empty %}
+        <li>No departments found.</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "exam/base.html" %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ book.title }}</h2>
+    <ul>
+        <li><strong>Edition:</strong> {{ book.edition }}</li>
+        <li><strong>Author:</strong> {{ book.author.name }}</li>
+        <li><strong>Author Address:</strong> {{ book.author.address }}</li>
+        <li><strong>Publication Year:</strong> {{ book.publication_year }}</li>
+    </ul>
+    <a href="{% url 'exam_list' %}">Back to List</a>
+{% endblock %}

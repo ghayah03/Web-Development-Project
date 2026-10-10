@@ -1,0 +1,27 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lab13 - Task1{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Task 1: Change Div Style</h1>
+    
+    <div id="myDiv" style="width:300px;height:150px;background-color:lightblue;border:1px solid black;padding:20px;margin:20px 0;">
+        This is a div element.
+    </div>
+    
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="changeText()">Change Text</button>
+</div>
+
+<script>
+    function changeColor() {
+        document.getElementById('myDiv').style.backgroundColor = 'lightgreen';
+    }
+    
+    function changeText() {
+        document.getElementById('myDiv').innerHTML = 'Text has been changed!';
+    }
+</script>
+{% endblock content %}
